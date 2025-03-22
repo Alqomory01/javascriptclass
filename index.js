@@ -513,7 +513,7 @@ const daniel = {
 
 calcAge: function(){
   console.log(this)
-  return 51- this.age;
+  return 51 - this.age;
 },
 calcMyage: function(){
   this.myage = 51 - this.age;
@@ -522,22 +522,52 @@ calcMyage: function(){
 };
 console.log(daniel.calcAge())
 console.log(daniel.calcMyage())
-const user = {
-  fname: "Daniel",
-  birthYear: 2000,
-  getAge: function () {
-    return new Date().getFullYear() - this.birthYear;
-  },
-  getSummary: function (){
-    return `${this.fname} is ${user.getAge()} years old `
-  }
-};
+// const user = {
+//   fname: "Daniel",
+//   birthYear: 2000,
+//   getAge: function () {
+//     return new Date().getFullYear() - this.birthYear;
+//   },
+//   getSummary: function (){
+//     return `${this.fname} is ${user.getAge()} years old `
+//   }
+// };
 
-console.log(user.getAge()); // Output: 25 (if the year is 2025)
+// console.log(user.getAge()); // Output: 25 (if the year is 2025)
 // console.log(`${fname} is ${user.getAge()} years old`)
-console.log(user.getSummary())
+// console.log(user.getSummary())
+
+// const user = {
+// myName: "pelumi",
+// birthYear: 1999,
+
+// getAge: function(){
+// console.log("we are here")
+// const currentYear  = new Date().getFullYear();
+// const curentAge = new Date().getFullYear() - this.birthYear
+// console.log(currentYear)
+// console.log(curentAge)
+
+// return `${this.myName} is ${currentAge} years old`
 
 
+// },
+// getSummary: function(){
+//   return `this is the summary of the user she is ${user.getAge()}`
+// }
+// }
+// user.getAge()
+// console.log(user.getAge())
+// console.log(user.getSummary())
+ person = {
+  firstName: "michael",
+  lastName: "sheyi",
+  age: 21,
+  hobbies: ["reading", "writing", "eating"]
+ }
+ console.log(Object.keys(person))
+ console.log(Object.values(person))
+ console.log(Object.entries(person))
 
 // console.log();
 // function tunde (item){
@@ -554,9 +584,11 @@ console.log(user.getSummary())
 // }
 // console.log(digital_one (10, 23))
 
-// let score1 =[10, 40, 25, 36, 70, 77, 53]
-// console.log(score1.filter((y) => y % 2 ==0));
-// console.log(score1.reduce((u,v) => u + v ));
+let score1 =[10, 40, 25, 36, 70, 77, 53]
+console.log(score1.filter((y) => y % 2 ==0));
+console.log(score1.reduce((u,v) => u + v ));
+
+// console.log(score1.forEach((y) => y + 2));
 
 // setInterval(() =>{
 //   console.log('Good Morning');
@@ -564,7 +596,10 @@ console.log(user.getSummary())
 // setTimeout(() => {
 //   console.log("Javascript class");
 
-// }, 5000)
+// }, 3000)
+// setInterval ( () => {
+//   console.log("Good Day")
+// }, 4000)
 
 // let mydigit = Math.floor(Math.random(0,10) * 10);
 // console.log(mydigit);
@@ -573,21 +608,70 @@ console.log(user.getSummary())
 //   letourdigit = Math.floor(Math.random(0,5) * 3)
 //   console.log(letourdigit);
 // }, 9000)
+// Destructuring of Objects in JavaScript
+// Destructuring is a feature in JavaScript that allows us to extract values from objects (or arrays) and assign them to variables in a concise way.
 
 // destructuring
-// let employee =
-//   {'name' : 'John',
-//   'age' : '40',
-//   'email' : 'komo2success21@gmail.com'
-// }
-// let {name, age, email} = employee;
-// console.log(age);
+let employee = {
+  name: "Doe",
+  age:35,
+  department: "sales"
+};
+ let { name, age, department} = employee
+ console.log(age)
+ let { name:Doe, department: marketing} = employee;
+ console.log(name)
 
+// const user = {
+//   username: "johndoe",
+//   email: "john@example.com"
+// };
+
+// Assigning properties to different variable names
+// const { username: userName, email: userEmail } = user;
+
+// console.log(userName);  // Output: johndoe
+// console.log(userEmail); // Output: john@example.com
+// const product = {
+//   title: "Laptop",
+//   price: 1500
+// };
+
+// `stock` is not defined in the object, so it takes the default value
+// const { title, price, stock = 100 } = product;
+
+// console.log(title);  // Output: Laptop
+// console.log(price);  // Output: 1500
+// console.log(stock);  // Output: 100 (default value)
 // // Spread Operator
 // let week1 = ['monday', 'tuesday', 'wednessday', 'thursday']
 // let week2 =['friday', 'saturday']
 // totalweek =[week1, ...week2]
 // console.log(totalweek);
+// function sumAll(...numbers) { 
+//   return numbers.reduce((acc, num) => acc + num, 0);
+// }
+// console.log(sumAll(2,5,7))
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let person1 = new Person("Mike", 25);
+console.log(person1.name); // Output: Mike
+class Animal {
+  constructor(name, sound) {
+      this.name = name;
+      this.sound = sound;
+  }
+  speak() {
+      console.log(this.name + " says " + this.sound);
+  }
+}
+
+let dog = new Animal("Dog", "Bark");
+dog.speak(); // Output: Dog says Bark
 
 // 1 create a program using a function that allow users to fill in their names(surname and first name)then print
 // function fill () {
@@ -648,39 +732,67 @@ console.log(user.getSummary())
 
 // greatestNumber()
 
-let my_dom = document.getElementsByClassName("dom")[0];
-my_dom.innerHTML = "Welcome to digital fortres class";
+let my_dom = document.getElementsByClassName("dom");
+my_dom[0].innerHTML = "Welcome to digital fortres class";
 
 let mydom = document.getElementById("dom");
 mydom.innerHTML = "Welcome to my first class at digital fortress class";
 
+let myBackground = document.getElementById("background");
+myBackground.style.backgroundColor = "black";
+myBackground.style.color = "white"
+
+let newparagraph = document.createElement("p")
+newparagraph.textContent = "We are welcome to this javascript class"
+document.body.appendChild(newparagraph)
+// mydom.textContent = "I will be showing you more on DOM"
+
 // let docu = document.querySelector('.dom')
 // docu.innerHTML = "Welcome to digital fortress class"
 
-let tundel = document.querySelector(".button0");
-let kunle = document.querySelector(".button-");
-let mytunde = document.querySelector(".display");
+// let tundel = document.querySelector(".button0");
+// let kunle = document.querySelector(".button-");
+// let mytunde = document.querySelector(".display");
 let mybutton2 = document.querySelector(".button2");
 
 let onTheLight = document.querySelector(".button");
 let offTheLight = document.querySelector(".buttonf");
 let show = document.querySelector(".mydisplay");
 
+let myincrease = document.querySelector(".buttonincrease")
+let mydecrease = document.querySelector(".buttondecrease")
+let myshow = document.querySelector('.newdisplay')
+
 let mynumber1 = 0;
 // tundex.addEventListener('click', () => {
 //   mytunde.innerHTML = ++mynumber
 // })
-
+// onTheLight.addEventListener("click", () =>{
+//   show.innerHTML = 
+// })
+myincrease.addEventListener("click", () => {
+  myshow.innerHTML = ++mynumber1
+})
+mydecrease.addEventListener("click", () => {
+  myshow.innerHTML = --mynumber1;
+})
 onTheLight.addEventListener("click", () => {
   show.innerHTML = `<img src='bulb.png' width='240px'>`;
 });
-tundel.addEventListener("click", () => {
-  mytunde.innerHTML = ++mynumber1;
-});
 
-kunle.addEventListener("click", () => {
-  mytunde.innerHTML = --mynumber1;
-});
+// onTheLight.addEventListener("click", () => {
+//   show.innerHTML = `< img src="./mybulb.glf">`
+// })
+offTheLight.addEventListener("click", () => {
+  show.innerHTML = `<img src='./mybulb.gif'>`;
+})
+// tundel.addEventListener("click", () => {
+//   mytunde.innerHTML = ++mynumber1;
+// });
+
+// kunle.addEventListener("click", () => {
+//   mytunde.innerHTML = --mynumber1;
+// });
 
 // tundex.addEventListener('click', myname)
 // function myname(){
@@ -708,12 +820,13 @@ kunle.addEventListener("click", () => {
 let ourDigital = ["blue", "red", "green", "yellow", "yellowgreen"];
 
 let tundex = document.querySelector(".button1");
-let mynumbers = 0;
+// let mynumbers = 0;
 
 tundex.addEventListener("click", () => {
-  document.body.style.backgroundColor = ourDigital[mynumbers];
+  let randomColor = getTunde();
+  document.body.style.backgroundColor = randomColor;
 });
-tundex.addEventListener("click", getTunde);
+// tundex.addEventListener("click", getTunde);
 function getTunde() {
   return ourDigital[Math.floor(Math.random() * ourDigital.length)];
 }
@@ -726,14 +839,19 @@ const getmyApi = async () => {
   console.log(data);
 };
 getmyApi();
-
+// .stringify
 let myname = localStorage.setItem("tunde", JSON.stringify(employee));
 
 let digital = JSON.parse(localStorage.getItem("tunde"));
 console.log(digital);
 
+let newstorage = localStorage.setItem("Storage", JSON.stringify(micheal));
+let mystorage = JSON.parse(localStorage.getItem("Storage"));
+console.log(mystorage)
+// let mystorage = JSON.parse(localStorage.getItem("Storage"))
+// console.log(mystorage)
 // Object oriented Programming OOp
-// class User{
+// class User{ 
 //   name = 'emeka';
 //   age = 20;
 // }
