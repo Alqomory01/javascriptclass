@@ -583,13 +583,6 @@ console.log(daniel.calcMyage())
 //   return x + y
 // }
 // console.log(digital_one (10, 23))
-
-let score1 =[10, 40, 25, 36, 70, 77, 53]
-console.log(score1.filter((y) => y % 2 ==0));
-console.log(score1.reduce((u,v) => u + v ));
-
-// console.log(score1.forEach((y) => y + 2));
-
 // setInterval(() =>{
 //   console.log('Good Morning');
 // }, 9000)
@@ -636,7 +629,6 @@ let employee = {
 //   title: "Laptop",
 //   price: 1500
 // };
-
 // `stock` is not defined in the object, so it takes the default value
 // const { title, price, stock = 100 } = product;
 
@@ -652,6 +644,59 @@ let employee = {
 //   return numbers.reduce((acc, num) => acc + num, 0);
 // }
 // console.log(sumAll(2,5,7))
+let score1 =[10, 40, 25, 36, 70, 77, 53]
+console.log(score1.filter((y) => y % 2 ==0));
+console.log(score1.reduce((u,v) => u + v ));
+// Data transformation
+// map create a new brand array
+// filter returns a new array containing the array elements that passed aspecified tes condition
+// reduce boils all array elements down to a single value
+// map method
+
+const movements =[200,450,-400,3000,-650,1300]
+for (const movement of movements){
+  if (movement >0){
+    console.log(`you deposited ${movement}`)
+  }else{
+    console.log(`you withdraw ${Math.abs(movement)}`)
+  }
+}
+// forEach method
+movements.forEach(function(movement){
+  if (movement >0){
+    console.log(`you deposited ${movement}`)
+  }else{
+    console.log(`you withdraw ${movement}`)
+  }
+})
+const nairatoUsd =1600
+// const movementsUSD = movements.map(function(mov){
+// return mov * nairatoUsd
+// })
+console.log(movements)
+// console.log(movementsUSD)
+const movementsUSD =movements.map(mov =>mov * nairatoUsd)
+
+const movementsDescription = movements.map((mov, i) =>{
+  if(mov >0){
+    return `Movement ${i+1}: You Deposited ${mov}`
+  }else {
+    `Movement ${i+1}: You withdrew ${Math.abs(mov)}`
+  }
+})
+// filter method
+const deposits = movements.filter(function(mov){
+return mov >0
+})
+console.log(deposits)
+// reduce method
+const balance =movements.reduce(function(acc,cur){
+return acc + cur
+});
+
+
+
+
 
 function Person(name, age) {
   this.name = name;
@@ -732,8 +777,8 @@ dog.speak(); // Output: Dog says Bark
 
 // greatestNumber()
 
-let my_dom = document.getElementsByClassName("dom");
-my_dom[0].innerHTML = "Welcome to digital fortres class";
+// let my_dom = document.getElementsByClassName("dom");
+// my_dom[0].innerHTML = "Welcome to digital fortres class";
 
 let mydom = document.getElementById("dom");
 mydom.innerHTML = "Welcome to my first class at digital fortress class";
@@ -742,8 +787,9 @@ let myBackground = document.getElementById("background");
 myBackground.style.backgroundColor = "black";
 myBackground.style.color = "white"
 
-let newparagraph = document.createElement("p")
+let newparagraph = document.createElement("h3")
 newparagraph.textContent = "We are welcome to this javascript class"
+// document.body.appendChild(newparagraph)
 document.body.appendChild(newparagraph)
 // mydom.textContent = "I will be showing you more on DOM"
 

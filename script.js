@@ -43,4 +43,26 @@ if(!myguess){
     
 }
    
-});
+});\
+
+const p =document.querySelector(".p");
+p.textContent = `my name is jolade`;
+alert("Text Set!");
+p.style.color = "red";
+
+// const p = document.querySelector(".p");
+// setTimeout(function(){
+//     p.textContent = `My name is jola alade`
+// }, 5000)
+// p.style.color = "red";
+// Asynchornous is a non-blocking
+// Execution doesn't wait for an asynchronous task to finsih its work
+// Application Programming Interface: piece of software that can be used by another 
+// piece of software, in order to allow applications to talk to each other
+// DOM API
+// Geolocation API
+// Own class API
+// online API :Application running on a server that receives requests for data, and sends dtat back as response;
+// we can use Third party APi
+// it is a data form which is widely used to transmit data from the web most data this days used the json format
+// https://countries-api-836d.onrender.com/countries/
